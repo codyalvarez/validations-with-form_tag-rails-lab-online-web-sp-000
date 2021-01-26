@@ -5,7 +5,7 @@ class AuthorsController < ApplicationController
   end
 
   def show
-	@author = Author.find(params[:id])
+	  @author = Author.find(params[:id])
   end
 
   def new
@@ -17,13 +17,13 @@ class AuthorsController < ApplicationController
   end
 
   def create
-	@author = Author.new(author_params)
-	if @author.valid?
+    @author = Author.new(author_params)
+    if @author.valid?
 		@author.save
 		redirect_to author_path(@author)
-	else
+	  else
 		render :new
-	end
+	  end
   end
 
   def update
